@@ -11,7 +11,9 @@ def routeFinder(orgVal,destiVal):
     destiVal = destiVal.replace(" ","+")
     mapsUrl = "https://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%st&key=AIzaSyAkKc-oigF24jNtgQio6erz128zRqCO_U4&mode=walking&alternatives=true" % (originVal,destinationVal)
      
-	response = urlopen(mapsUrl) 
+	response = urlopen(mapsUrl)
+	#The data returned by urlopen() or urlretrieve() is the raw data returned by the server. 
+	#This may be binary data (such as an image), plain text or (for example) HTML. 
     data = json.loads(response.read().decode('utf-8')) 
     co_list = []
 	#coordinate list
